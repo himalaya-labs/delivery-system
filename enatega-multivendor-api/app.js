@@ -110,7 +110,7 @@ async function startApolloServer() {
       maxFieldSize: 10000000 // 10 MB
     },
     debug: true,
-    introspection: config.NODE_ENV !== 'production',
+    introspection: config.NODE_ENV !== 'production' || true,
     context: ({ req, res }) => {
       if (isAuthenticated(req).isAuth) {
         return new Promise((resolve, reject) => {
