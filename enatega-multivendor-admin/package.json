@@ -1,0 +1,99 @@
+{
+  "name": "enatega-multivendor",
+  "version": "2.0.0",
+  "description": "Enatega MultiVendor dashboard",
+  "main": "index.js",
+  "homepage": "https://multivendor-admin.ninjascode.com/",
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "cross-env REACT_APP_ENV=development react-scripts --openssl-legacy-provider start",
+    "start:staging": "cross-env REACT_APP_ENV=staging react-scripts --openssl-legacy-provider start",
+    "start:prod": "cross-env REACT_APP_ENV=production react-scripts --openssl-legacy-provider start",
+    "build": "cross-env REACT_APP_ENV=production react-scripts --openssl-legacy-provider build",
+    "build:dev": "cross-env REACT_APP_ENV=development react-scripts --openssl-legacy-provider build",
+    "build:staging": "cross-env REACT_APP_ENV=staging react-scripts --openssl-legacy-provider build",
+    "build:production": "cross-env REACT_APP_ENV=production react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write '**/*.{js,jsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@googlemaps/markerclusterer": "^2.5.3",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/icons-material": "^5.8.3",
+    "@mui/material": "^5.16.14",
+    "@mui/styles": "^5.8.3",
+    "@mui/system": "^6.4.1",
+    "@react-google-maps/api": "^2.20.6",
+    "@sentry/react": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
+    "@wojtekmaj/react-timerange-picker": "^3.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-upload-client": "^18.0.1",
+    "chart.js": "^3.6.0",
+    "date-fns": "^4.1.0",
+    "env-cmd": "^10.1.0",
+    "firebase": "^9.4.0",
+    "formik": "^2.4.6",
+    "graphql": "^15.0.0",
+    "husky": "^8.0.3",
+    "i18next": "^17.0.0",
+    "moment": "2.24.0",
+    "nouislider": "13.1.1",
+    "react": "^17.0.0",
+    "react-chartjs-2": "^4.0.0",
+    "react-data-table-component": "^6.9.3",
+    "react-datepicker": "^8.4.0",
+    "react-datetime": "2.16.3",
+    "react-dom": "^17.0.0",
+    "react-google-autocomplete": "^2.7.3",
+    "react-i18next": "^10.10.0",
+    "react-loader-spinner": "^4.0.0",
+    "react-notifications": "^1.7.4",
+    "react-places-autocomplete": "^7.3.0",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "^4.0.3",
+    "sass": "^1.77.6",
+    "source-map-explorer": "^2.5.2",
+    "styled-components": "^5.1.1",
+    "subscriptions-transport-ws": "^0.11.0",
+    "use-places-autocomplete": "^4.0.1",
+    "validate.js": "^0.12.0",
+    "yup": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/googlemaps": "3.30.18",
+    "@types/markerclustererplus": "2.1.33",
+    "@types/react": "^17.0.0",
+    "cross-env": "^10.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "2.0.5",
+    "prettier-config-standard": "^1.0.1",
+    "typescript": "3.3.3333"
+  }
+}

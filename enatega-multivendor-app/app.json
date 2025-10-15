@@ -1,0 +1,154 @@
+{
+  "expo": {
+    "name": "Orderat",
+    "scheme": ["orderatcustomer"],
+    "version": "1.2.3",
+    "description": "Orderat Customer is a starter kit food ordering app built in React Native using Expo for IOS and Android. It's made keeping good aesthetics in mind as well keeping the best coding practices in mind. Its fully customisable to easily help you in your next food delivery project. https://market.nativebase.io/view/react-native-food-delivery-backend-app",
+    "slug": "enatega-customer-app-latest",
+    "owner": "mahmoudattia",
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
+    },
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "icon": "./assets/logo.jpg",
+    "splash": {
+      "image": "./assets/logo.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "buildNumber": "99",
+      "supportsTablet": true,
+      "userInterfaceStyle": "automatic",
+      "bundleIdentifier": "com.orderatcustomer.app",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCaXzEgiEKTtQgQhy0yPuBDA4bD7BFoPOY"
+      },
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "usesAppleSignIn": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use location to determine the delivery address for your orders.",
+        "UIBackgroundModes": ["remote-notification"],
+        "NSUserTrackingUsageDescription": "We use your device’s identifier to show you personalized offers and measure app performance. For example, if you search for food, we may suggest nearby restaurants.",
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.967541328677-nf8h4ou7rhmq9fahs87p057rggo95eah"
+            ]
+          }
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "newArchEnabled": true
+    },
+    "notification": {
+      "iosDisplayInForeground": true,
+      "color": "#90E36D",
+      "icon": "./assets/not-icon.png",
+      "androidMode": "default",
+      "androidCollapsedTitle": "Customer Multivendor"
+    },
+    "android": {
+      "versionCode": 97,
+      "package": "com.orderatcustomer.app",
+      "googleServicesFile": "./google-services.json",
+      "userInterfaceStyle": "automatic",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCaXzEgiEKTtQgQhy0yPuBDA4bD7BFoPOY"
+        }
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.FOREGROUND_SERVICE",
+        "com.google.android.gms.permission.AD_ID"
+      ],
+      "newArchEnabled": true
+    },
+    "plugins": [
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "note": "Use SENTRY_AUTH_TOKEN env to authenticate with Sentry.",
+          "project": "react-native",
+          "organization": "orderat"
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.808523856739-46u2pjdsfl0tjmplj580os4gntbb5410"
+        }
+      ],
+      "expo-localization",
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "We use your device’s identifier to show you personalized offers and measure app performance. For example, if you search for food, we may suggest nearby restaurants."
+        }
+      ],
+      [
+        "expo-updates",
+        {
+          "username": "mahmoudattia"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $Customer Multivendor to use your location."
+        }
+      ],
+      ["expo-font"],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "extraProguardRules": "-keep class com.google.firebase.** { *; }",
+            "gradleProperties": {
+              "android.useAndroidX": "true",
+              "android.enableJetifier": "true"
+            }
+          },
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "sounds": ["./assets/beep1.wav"]
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/messaging",
+      "./app.plugin.js",
+      "expo-web-browser",
+      "./plugins/withFirebaseAppDelegate"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "72ed147e-b6a9-4cb0-9330-920a10496a47"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/72ed147e-b6a9-4cb0-9330-920a10496a47"
+    }
+  }
+}

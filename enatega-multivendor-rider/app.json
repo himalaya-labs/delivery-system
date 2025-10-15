@@ -1,0 +1,111 @@
+{
+  "expo": {
+    "name": "Orderat Drive",
+    "description": "Orderat Drive is a starter kit food ordering app built in React Native using Expo for IOS and Android. It's made keeping good aesthetics in mind as well keeping the best coding practices in mind. Its fully customisable to easily help you in your next food delivery project. https://market.nativebase.io/view/react-native-food-delivery-backend-app",
+    "version": "1.1.43",
+    "slug": "enatega-rider-app-latest",
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "mahmoudattia"
+        }
+      ],
+      "expo-font",
+      "expo-localization",
+      "sentry-expo",
+      [
+        "expo-notifications",
+        {
+          "sounds": ["./assets/beep1.wav"]
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "react-native-background-geolocation",
+        {
+          "license": "797594c0fcc1cd46f8630152c5af2a8db0e99394a5ba1b831067b6b0dfee4c79"
+        }
+      ],
+      [
+        "expo-gradle-ext-vars",
+        {
+          "googlePlayServicesLocationVersion": "21.1.0",
+          "appCompatVersion": "1.4.2"
+        }
+      ],
+      "react-native-background-fetch"
+    ],
+    "androidStatusBar": {
+      "backgroundColor": "#000"
+    },
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "icon": "./assets/logo.jpg",
+    "splash": {
+      "image": "./assets/logo.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#fff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.orderatrider.app",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCaXzEgiEKTtQgQhy0yPuBDA4bD7BFoPOY"
+      },
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch", "remote-notification"],
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "We need your location to track deliveries in background",
+        "NSLocationWhenInUseUsageDescription": "$(PRODUCT_NAME) uses your location for features like finding orders nearby and tracking customer orders!."
+      }
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "INTERNET"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCaXzEgiEKTtQgQhy0yPuBDA4bD7BFoPOY"
+        }
+      },
+      "package": "com.orderatrider.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "417dbabb-e049-4341-b2f3-88f1cd3f491d"
+      },
+      "firebaseProjectId": "food-delivery-api-ab4e4"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/417dbabb-e049-4341-b2f3-88f1cd3f491d"
+    }
+  },
+  "hooks": {
+    "postPublish": [
+      {
+        "file": "sentry-expo/upload-sourcemaps",
+        "config": {
+          "organization": "ninjas-code",
+          "project": "enatega-multivendor-app",
+          "authToken": "744ed798e04a40a896b0269c25f945de0e166db8362e41969b64d5e07ca80e65"
+        }
+      }
+    ]
+  }
+}

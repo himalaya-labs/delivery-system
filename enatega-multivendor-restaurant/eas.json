@@ -1,0 +1,47 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "channel": "development",
+      "distribution": "internal"
+    },
+    "staging": {
+      "developmentClient": false,
+      "channel": "staging",
+      "distribution": "internal"
+    },
+    "preview": {
+      "channel": "staging",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "API_ENV": "staging"
+      }
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "API_ENV": "production"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json",
+        "track": "production"
+      },
+      "ios": {
+        "appleId": "sharan.gohar@icloud.com",
+        "ascAppId": "1526672537",
+        "appleTeamId": "GDFK7MVY6P"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 0.43.0",
+    "appVersionSource": "local"
+  }
+}
