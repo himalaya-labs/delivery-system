@@ -20,6 +20,8 @@ services:
       context: .
     ports:
       - 8001:8001
+    network_mode: bridge
+
   redis:
     image: redis
     ports:
